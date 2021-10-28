@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-buttons slot ="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ingreso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen>
+  <form #formulario ="ngForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+  
+      <ion-list-header>
+        <ion-label>Ingrese sus datos: </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input type="email" 
+                  placeholder="ingrese email" 
+                  name="email" 
+                  [(ngModel)]="usuario.email"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
+                  required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password:</ion-label>
+        <ion-input type="password"
+                    name="password"
+                    [(ngModel)]="usuario.password"
+                    required
+                    placeholder="Contraseña">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefono:</ion-label>
+          <ion-input type="tel"
+                    name="telefono"
+                    placeholder="telefono">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Comuna:</ion-label>
+        <ion-input type="text"
+                    name="comuna"
+                    placeholder="Comuna">
+
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Interes:</ion-label>
+        <ion-input type="text"
+                    name="interes"
+                    placeholder="Interes">
+
+        </ion-input>
+      </ion-item>
+      <ion-button routerLink="/inicio" [disabled]="formulario.invalid" expand="block">
+        Login
+      </ion-button>
+    </ion-list>
+    
+  </form>
+</ion-content>694
