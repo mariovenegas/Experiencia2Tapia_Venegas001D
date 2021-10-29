@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen>
-  <form #formulario ="ngForm" (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="login(fLogin)" #fLogin ="ngForm" >
     <ion-list>
   
       <ion-list-header>
@@ -32,33 +32,10 @@
                     placeholder="Contraseña">
         </ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Telefono:</ion-label>
-          <ion-input type="tel"
-                    name="telefono"
-                    placeholder="telefono">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Comuna:</ion-label>
-        <ion-input type="text"
-                    name="comuna"
-                    placeholder="Comuna">
-
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Interes:</ion-label>
-        <ion-input type="text"
-                    name="interes"
-                    placeholder="Interes">
-
-        </ion-input>
-      </ion-item>
-      <ion-button routerLink="/inicio" [disabled]="formulario.invalid" expand="block">
+      <ion-button type="submit" [disabled]="fLogin.invalid" >
         Login
       </ion-button>
     </ion-list>
     
   </form>
-</ion-content>694
+</ion-content>
