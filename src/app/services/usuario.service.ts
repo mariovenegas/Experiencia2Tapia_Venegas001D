@@ -1,32 +1,38 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+  private _storage : Storage;
+  email: string = null;
 
-  token: string = null;
-
-  constructor( private storage: Storage ) { }
+  constructor( private storage: Storage ) {
+    this.init();
+   }
+  async init(){
+    const storage = await this.storage.create();
+    this._storage = storage;
+  }
 
   login( email:string, password: string) {
 
-    const data = {email: email, password: password};
 
     if( email == 'mario@gmail.com' && password == '1234')
     {
-      this.guardarToken('aa12328348234rjgiur93');
+      this.guardarUsuario(email);
       return true;
     }
     else {
-      this.token = null;
+      this.email = null;
       this.storage.clear();
       return false;
     }
   }
-  async guardarToken (token: string) {
-    this.token = token;
-    await this.storage.set('token', token);
+  async guardarUsuario (email: string) {
+    this.email = email;
+    await this.storage.set('email', email);
   }
+  
 }
