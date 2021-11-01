@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.page.html',
@@ -9,7 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ModalPage implements OnInit {
   @Input() nombre: string;
-  @Input() profesion: string;
+  @Input() descripcion: string;
 
   constructor(private modalCtrl: ModalController) { }
 

@@ -7,47 +7,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" fullscreen>
-  <ion-list>
-    <ion-item>
-      <ion-avatar (click)="mostrarModal('Jose Rodrigues', 'Gasfiter con 20 años de experiencia')" slot="start">
-        <ion-img src="/assets/gente1.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label>Jose Rodrigues</ion-label>
-      <ion-label slot="end">gasfiter</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar (click)="mostrarModal('Imelda', 'planchado, 40 años de experiencia')" slot="start">
-        <ion-img src="/assets/gente2.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label>Imelda</ion-label>
-      <ion-label slot="end">planchado</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar (click)="mostrarModal('Romualdo Ramirez', 'albañil')" slot="start">
-        <ion-img src="/assets/gente3.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label>Romualdo Ramirez</ion-label>
-      <ion-label  slot="end">albañil</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar (click)="mostrarModal('Reginaldo Gomez', 'Electrico')" slot="start">
-        <ion-img src="/assets/gente4.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label>Reginaldo Gomez</ion-label>
-      <ion-label  slot="end">Electrico</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar (click)="mostrarModal('Melgar Quispe', 'Maestro')" slot="start">
-        <ion-img src="/assets/gente5.jpg">
-        </ion-img>
-      </ion-avatar>
-      <ion-label>Melgar Quispe</ion-label>
-      <ion-label slot="end">Maestro</ion-label>
-    </ion-item>
+<ion-content>
+  <ion-item>
+    <ion-label position="fixed">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.nombre" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.email" required></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="fixed">Labor</ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.labor" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Descripcion</ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.descripcion" required></ion-input>
+  </ion-item>
+  
+
+  <ion-button (click)="addTrabajador()" expand="full">
+    Agregar Trabajador
+  </ion-button>
+
+  <ion-list #myList>
+    <ion-list-header>
+      <ion-label>Trabajadores</ion-label>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-item *ngFor="let dato of datos">
+        <ion-avatar (click)="mostrarModal ('','')" slot="start">
+          <ion-img src="/assets/gente1.jpg">
+          </ion-img>
+        </ion-avatar>
+        <ion-label text-wrap> {{dato.nombre}}</ion-label>
+        <ion-label slot="end">{{dato.labor}}</ion-label>
+          
+      
+      </ion-item>
+    </ion-list>
   </ion-list>
 </ion-content>
+

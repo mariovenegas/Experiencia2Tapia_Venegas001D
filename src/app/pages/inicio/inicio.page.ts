@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { BasedatosService } from '../../services/basedatos.service';
 //import {MenuController} from '@ionic/angular';
 
 

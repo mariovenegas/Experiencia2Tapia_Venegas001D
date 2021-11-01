@@ -1,7 +1,6 @@
 <ion-header class="ion-no-border" translucent>
   <ion-toolbar>
     <ion-buttons slot ="start">
-      <ion-menu-button menu="first" color="primary"></ion-menu-button>
     </ion-buttons>
     <ion-title>Ingreso</ion-title>
   </ion-toolbar>
@@ -32,7 +31,7 @@
                     placeholder="Contraseña">
         </ion-input>
       </ion-item>
-      <ion-button type="submit" [disabled]="fLogin.invalid" >
+      <ion-button type="submit" [disabled]="fLogin.invalid" color="tertiary" shape="round">
         Login
       </ion-button>
     </ion-list>

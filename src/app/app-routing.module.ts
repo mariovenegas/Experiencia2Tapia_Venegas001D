@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'ingreso',
@@ -17,11 +19,17 @@ const routes: Routes = [
   },
   {
     path: 'mural',
-    loadChildren: () => import('./pages/mural/mural.module').then( m => m.MuralPageModule)
+    loadChildren: () => import('./pages/mural/mural.module').then( m => m.MuralPageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'noticia',
-    loadChildren: () => import('./pages/noticia/noticia.module').then( m => m.NoticiaPageModule)
+    loadChildren: () => import('./pages/noticia/noticia.module').then( m => m.NoticiaPageModule),
+    canActivate: [GuardGuard]
+  },
+  {
+    path: 'salir',
+    loadChildren: () => import('./pages/salir/salir.module').then( m => m.SalirPageModule)
   },
 ];
 

@@ -26,7 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 ion-item{
-    --background:rgb(235, 207, 207);
+    --background:rgb(255, 255, 255);
 }
 
 .text-primary{
@@ -35,5 +35,5 @@ ion-item{
 
 .noticia-source-name {
     font-size: 12px;
-    color: lightgray;
+    color: black;
 }

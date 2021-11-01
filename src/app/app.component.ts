@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
+
 
 interface Componente {
   icon: string;
@@ -15,12 +17,12 @@ export class AppComponent {
   componentes: Componente[] = [
 
     {
-      icon: 'person-outline',
-      name: 'Ingreso',
-      redirectTo: '/ingreso'
+      icon: 'arrow-undo-sharp',
+      name: 'Salir',
+      redirectTo: '/salir'
     },
     {
-      icon: 'newspaper-outline',
+      icon: 'reader-outline',
       name: 'Mural',
       redirectTo: '/mural'
     },
@@ -30,10 +32,11 @@ export class AppComponent {
       redirectTo: '/inicio'
     },
     {
-      icon: 'home-outline',
+      icon: 'newspaper-outline',
       name: 'Noticias',
       redirectTo: '/noticia'
     },
    ];
   constructor() {}
+  
 }

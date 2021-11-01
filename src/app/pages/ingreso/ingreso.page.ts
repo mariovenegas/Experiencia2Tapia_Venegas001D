@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UsuarioService } from '../../services/usuario.service';
+import { BasedatosService } from '../../services/basedatos.service';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { ToastController, AlertController } from '@ionic/angular';
@@ -18,7 +18,7 @@ export class IngresoPage implements OnInit {
 
 
 
-  constructor(private usuarioService: UsuarioService,
+  constructor(private baseDatos: BasedatosService,
     private navCtrl: NavController, 
     private storage: Storage,
     public alertController: AlertController,
@@ -30,7 +30,7 @@ export class IngresoPage implements OnInit {
 
   login( fLogin: NgForm ){
 
-    if( this.usuarioService.login(this.usuario.email, this.usuario.password))
+    if( this.baseDatos.login(this.usuario.email, this.usuario.password))
     {
       this.navCtrl.navigateRoot( 'inicio',{animated: true } );
       this.presentToast("Bienvenido " + this.usuario.email);
@@ -40,8 +40,11 @@ export class IngresoPage implements OnInit {
         this.navCtrl.navigateRoot( 'ingreso',{animated: true } );
       
     }
+
     
   }
+
+ 
   async presentToast(message:string, duration?:number){
     const toast = await this.toastController.create(
       {
