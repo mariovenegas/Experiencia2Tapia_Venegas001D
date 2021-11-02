@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import{ModalPage} from '../modal/modal.page';
 import { BasedatosService, Trabajador } from '../../services/basedatos.service';
 import { Platform, ToastController, IonList} from '@ionic/angular';
 
@@ -42,19 +41,6 @@ export class MuralPage implements OnInit {
       this.loadDatos();
     });
   }
-
-  async mostrarModal(nombre, profesion) {
-    const modal = await this.modalCtrl.create({
-      component: ModalPage,
-      componentProps: {
-        nombre: nombre,
-        profesion: profesion
-      }
-    });
-    await modal.present();
-
-  }
-
   async showToast(msg){
     const toast = await this.toastController.create({
       message: msg, 

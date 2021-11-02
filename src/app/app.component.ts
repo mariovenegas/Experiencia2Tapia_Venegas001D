@@ -33,8 +33,8 @@ export class AppComponent {
     },
     {
       icon: 'newspaper-outline',
-      name: 'Noticias',
-      redirectTo: '/noticia'
+      name: 'Indicadores',
+      redirectTo: '/indicadores'
     },
    ];
   constructor() {}

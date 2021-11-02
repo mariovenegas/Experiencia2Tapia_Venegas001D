@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BasedatosService } from '../../services/basedatos.service';
-//import {MenuController} from '@ionic/angular';
 
 
 

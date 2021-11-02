@@ -23,13 +23,12 @@ const routes: Routes = [
     canActivate: [GuardGuard]
   },
   {
-    path: 'noticia',
-    loadChildren: () => import('./pages/noticia/noticia.module').then( m => m.NoticiaPageModule),
-    canActivate: [GuardGuard]
-  },
-  {
     path: 'salir',
     loadChildren: () => import('./pages/salir/salir.module').then( m => m.SalirPageModule)
+  },
+  {
+    path: 'indicadores',
+    loadChildren: () => import('./pages/indicadores/indicadores.module').then( m => m.IndicadoresPageModule)
   },
 ];
 

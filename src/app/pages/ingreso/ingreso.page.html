@@ -8,33 +8,42 @@
 
 <ion-content class="ion-padding" fullscreen>
   <form (ngSubmit)="login(fLogin)" #fLogin ="ngForm" >
-    <ion-list>
-  
-      <ion-list-header>
-        <ion-label>Ingrese sus datos: </ion-label>
-      </ion-list-header>
-      <ion-item>
-        <ion-label>Email:</ion-label>
-        <ion-input type="email" 
-                  placeholder="ingrese email" 
-                  name="email" 
-                  [(ngModel)]="usuario.email"
-                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
-                  required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Password:</ion-label>
-        <ion-input type="password"
-                    name="password"
-                    [(ngModel)]="usuario.password"
-                    required
-                    placeholder="Contraseña">
-        </ion-input>
-      </ion-item>
-      <ion-button type="submit" [disabled]="fLogin.invalid" color="tertiary" shape="round">
-        Login
-      </ion-button>
-    </ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label>Email:</ion-label>
+            <ion-input type="email" 
+                      placeholder="ingrese email" 
+                      name="email" 
+                      [(ngModel)]="usuario.email"
+                      pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
+                      required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password:</ion-label>
+            <ion-input type="password"
+                        name="password"
+                        [(ngModel)]="usuario.password"
+                        required
+                        placeholder="Contraseña">
+            </ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" [disabled]="fLogin.invalid" color="tertiary" shape="round" fill="outline">
+          Login
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  color="tertiary" shape="round" fill="outline">
+          Registrar
+        </ion-button>
+      </ion-col>
+    </ion-row>
     
   </form>
 </ion-content>
